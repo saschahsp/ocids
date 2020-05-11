@@ -1,5 +1,6 @@
 # Cardboard Model Deployment
 
+Instructions to deploy the cardboard model. 
 
 Open a terminal with FN, Docker and OCIcli installed. I would suggest the CloudShell, because it has all installed and the environment is already authenticated. More infos on the CloudShell [here](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/cloudshellintro.htm).
 
