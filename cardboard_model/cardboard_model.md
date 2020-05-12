@@ -7,10 +7,12 @@ Open a terminal with FN, Docker and OCIcli installed. I would suggest the CloudS
 Further, you need to create an appropriate context and updated the required parameter. A guide outside of CloudShell can be found [here](https://www.oracle.com/webfolder/technetwork/tutorials/infographics/oci_faas_gettingstarted_quickview/functions_quickview_top/functions_quickview/index.html).
 
 In CloudShell you may only update 
-* API url
+* Compartment ID
 * Registry
 
 ![](../images/cardboard_1.png)
+
+Follow chapter C [here](https://www.oracle.com/webfolder/technetwork/tutorials/infographics/oci_functions_cloudshell_quickview/functions_quickview_top/functions_quickview/index.html)
 
 Afterwards, download the model from the model catalog by using the OCID.
 
