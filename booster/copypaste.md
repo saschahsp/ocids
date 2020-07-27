@@ -67,3 +67,56 @@ curl -k -X POST https://o3x7l3yrnqumwhc4e3j6voqbmi.apigateway.eu-frankfurt-1.oci
 ```bash
 curl -k -X POST https://o3x7l3yrnqumwhc4e3j6voqbmi.apigateway.eu-frankfurt-1.oci.customer-oci.com/predictor/predict -d @test.json --header "Content-type:application/json"
 
+# OML 101
+
+**confusion matrix**
+
+```sql
+%script
+DECLARE
+v_sql varchar2(100);
+/*  drop build settings  */
+
+BEGIN
+v_sql := 'DROP TABLE nb_confusion_matrix PURGE';
+EXECUTE IMMEDIATE v_sql;
+DBMS_OUTPUT.PUT_LINE (v_sql ||': succeeded');
+EXCEPTION
+WHEN OTHERS THEN
+DBMS_OUTPUT.PUT_LINE (v_sql ||': drop unneccessary - no table exists');
+END;
+
+DECLARE
+v_accuracy NUMBER;
+BEGIN
+DBMS_DATA_MINING.COMPUTE_CONFUSION_MATRIX(v_accuracy, 'N1_APPLY_RESULT','N1_TEST_DATA','CUST_ID','AFFINITY_CARD','nb_confusion_matrix','PREDICTION','PROBABILITY');
+DBMS_OUTPUT.PUT_LINE('**** MODEL ACCURACY ****: ' || ROUND(v_accuracy,4));
+END;
+/
+```
+```sql
+%sql
+select * from nb_confusion_matrix;
+```
+
+**procedure**
+
+```sql
+%script 
+ CREATE OR REPLACE PROCEDURE post_prediction ( 
+ p_HOUSEHOLD_SIZE IN n1_test_data.HOUSEHOLD_SIZE%TYPE, 
+ p_YRS_RESIDENCE IN n1_test_data.YRS_RESIDENCE%TYPE, 
+ p_Y_BOX_GAMES IN n1_test_data.Y_BOX_GAMES%TYPE, 
+ y_pred OUT number )
+ 
+ AS
+ 
+ BEGIN SELECT PREDICTION_PROBABILITY (
+ N1_CLASS_MODEL, '1' USING
+ p_HOUSEHOLD_SIZE AS HOUSEHOLD_SIZE, 
+ p_YRS_RESIDENCE AS YRS_RESIDENCE, 
+ p_Y_BOX_GAMES AS Y_BOX_GAMES ) INTO y_pred FROM DUAL; 
+
+ 
+ END;
+```
