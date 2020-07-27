@@ -66,6 +66,7 @@ curl -k -X POST https://o3x7l3yrnqumwhc4e3j6voqbmi.apigateway.eu-frankfurt-1.oci
 
 ```bash
 curl -k -X POST https://o3x7l3yrnqumwhc4e3j6voqbmi.apigateway.eu-frankfurt-1.oci.customer-oci.com/predictor/predict -d @test.json --header "Content-type:application/json"
+```
 
 # OML 101
 
