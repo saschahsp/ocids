@@ -230,7 +230,7 @@ pycurl==7.43.0.5
 pydocstyle==4.0.1
 pydot==1.4.1
 pyflakes==2.1.1
-Pygments==2.6.1
+Pygments==2.7.4
 pygpu==0.7.6
 pylint==2.4.4
 pymc3==3.7
