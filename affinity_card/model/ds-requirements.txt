@@ -332,7 +332,7 @@ traittypes==0.2.1
 typed-ast==1.4.1
 ujson==1.35
 unicodecsv==0.14.1
-urllib3==1.25.8
+urllib3==1.26.5
 version-parser==1.0.0
 vincent==0.4.4
 wasabi==0.6.0
