@@ -125,7 +125,7 @@ jupyter-contrib-nbextensions==0.5.1
 jupyter-core==4.6.1
 jupyter-highlight-selected-word==0.2.0
 jupyter-nbextensions-configurator==0.4.1
-jupyterlab==1.2.3
+jupyterlab==1.2.21
 jupyterlab-server==1.0.6
 Keras==2.2.5
 Keras-Applications==1.0.8
