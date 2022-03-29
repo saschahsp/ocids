@@ -193,7 +193,7 @@ pandas==0.24.2
 pandas-datareader==0.8.1
 pandasql==0.7.3
 pandocfilters==1.4.2
-paramiko==2.7.1
+paramiko==2.10.1
 parso==0.5.2
 partd==1.1.0
 path==13.1.0
