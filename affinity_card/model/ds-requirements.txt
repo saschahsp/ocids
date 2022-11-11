@@ -244,7 +244,7 @@ pyparsing==2.4.6
 pyproj==2.6.0
 pyrsistent==0.16.0
 PySocks==1.7.1
-pyspark==2.4.4
+pyspark==3.2.2
 pystan==2.19.0.0
 pytest==5.3.5
 pytest-arraydiff==0.3
